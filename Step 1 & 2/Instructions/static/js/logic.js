@@ -157,7 +157,7 @@ let legend = L.control({
 //add the properties for the legend
 legend.onAdd = function() {
     //make a div for the legend to appear on page
-    let div = L.DomUtil.create("div", "info lengend");
+    let div = L.DomUtil.create("div", "info legend");
 
     // set up intervals
     let intervals = [-10,10,30,50,70,90];
@@ -173,14 +173,14 @@ legend.onAdd = function() {
 
     // loop intervals and colors, 
     //create colored labeled squares for each interval
-    for(var i = 0; 1 < intervals.length; i++)
+    for(var i = 0; i < intervals.length; i++)
     {
         //inner html that sets the square for each interval
-        div.innerHTML += "<i style=background: "
+        div.innerHTML += "<i style='background: "
             + colors[i]
             + "'></i> "
             + intervals[i]
-            + (intervals[i +1] ? "km &ndash km;" + intervals[i +1] + "km<br>" : "+");
+            + (intervals[i +1] ? "km - km;" + intervals[i +1] + "km<br>" : "+");
     }
     return div;
 };
